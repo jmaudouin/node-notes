@@ -5,7 +5,15 @@ var url = require('url');
 const port = process.env.PORT || 3000
 
 
-app.get('/chercheParMots', function(request, response) {
+app.get('/', function(request, response) {
+
+  response.writeHead(200, {
+      'Content-Type': 'text/html',
+      'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
+  });
+  response.end("coucou");
+});app.get('/chercheParMots', function(request, response) {
   var url_parts = url.parse(request.url, true);
   var query = url_parts.query;
 
