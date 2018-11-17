@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var url = require('url');
 
+const port = process.env.PORT || 3000
 
 
 app.get('/chercheParMots', function(request, response) {
@@ -18,7 +19,7 @@ app.get('/chercheParMots', function(request, response) {
 });
 
 
-app.listen(3000);
+app.listen(port,()=>{console.log('serveur écoute le port '+port)});
 
 
 
